@@ -1,0 +1,49 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{% static 'Home.css' %}">
+  <title>My Site</title>
+</head>
+
+<body>
+
+  <center>
+    <h1>Hello</h1>
+  </center>
+  <hr>
+  <center>
+
+
+    <fieldset>
+      <form action="/SubmitData">
+        <input name="Name" type="text" placeholder="Name">
+        <br>
+        <br>
+        <input name="Price" type="text" placeholder="Price">
+        <br>
+        <button>Submit</button>
+      </form>
+    </fieldset>
+
+   
+    <div id="Products">
+
+      {% for i in AllProducts %}
+      <div class="Card">
+        <h3>{{ i.Name }}</h3>
+        <p>{{ i.Price }}</p>
+      </div>
+      {% endfor %}
+  
+
+    </div>
+
+
+
+  </center>
+  
+</body>
+</html>
